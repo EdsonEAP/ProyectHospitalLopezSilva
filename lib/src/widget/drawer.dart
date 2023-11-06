@@ -158,6 +158,11 @@ class DrawerGeneral {
             ),
           ),
           onTap: () {
+            prefs.busquedaEspecialidadDoctor = "";
+            prefs.busquedaLugarDoctor = "";
+            prefs.busquedaNombreDoctor = "";
+            prefs.documentoDni = "";
+            prefs.correo = "";
             Navigator.pushReplacementNamed(context, LoginView.name);
             // Aquí puedes agregar acciones para la opción 1
           },
