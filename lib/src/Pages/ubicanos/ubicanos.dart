@@ -31,7 +31,7 @@ class _UbicanosViewState extends State<UbicanosView> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        backgroundColor: General.colorApp,
+        backgroundColor: Color.fromARGB(255, 171, 211, 224),
         title: Center(
           child: Container(
             margin: EdgeInsets.only(right: 50),
@@ -89,9 +89,9 @@ class _UbicanosViewState extends State<UbicanosView> {
                                         'Centro Materno Infantil Cesar Lopez Silva'),
                                   ),
                                   content: Image.asset(
-                                    'assets/icon/hospital.jpg', 
-                                    width: 150, 
-                                    height: 150, 
+                                    'assets/icon/hospital.jpg',
+                                    width: 150,
+                                    height: 150,
                                   ),
                                 );
                               },

@@ -25,7 +25,7 @@ class _TerminosRegisterState extends State<TerminosRegister> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        backgroundColor: General.colorApp,
+        backgroundColor: Color.fromARGB(255, 171, 211, 224),
         title: Center(
           child: Container(
             margin: EdgeInsets.only(right: 50),
