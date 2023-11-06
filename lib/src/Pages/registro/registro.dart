@@ -417,25 +417,50 @@ streamBotonReactive(context) {
         duration: const Duration(seconds: 2),
         child: InkWell(
           onTap: () => {
-            registerBloc.requestRegister(context,
-                fecha_nacimiento: yearNacimientoController.text +
-                    "-" +
-                    mesEnLetras! +
-                    "-" +
-                    diaNacimientoController.text,
-                type_document: dropdownDni,
-                document: documentoController.text,
-                first_name: primerNombreController.text,
-                second_name: segundoNombreController.text,
-                surnames: apellidoController.text,
-                gender: dropdownSexo,
-                age: edadController.text,
-                email: emailController.text,
-                phone: celularController.text,
-                address: direccionController.text,
-                type_sure: dropdownSeguro,
-                password: passController.text,
-                terms: valueTerminosYCondiciones ? "1" : '0')
+            if (mesEnLetras == null)
+              {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: Text("Aviso"),
+                      content: Text(
+                          "Por favor, complete todos los campos requeridos."),
+                      actions: <Widget>[
+                        TextButton(
+                          child: Text("Aceptar"),
+                          onPressed: () {
+                            Navigator.of(context)
+                                .pop(); // Cierra el cuadro de diálogo
+                          },
+                        ),
+                      ],
+                    );
+                  },
+                ),
+              }
+            else
+              {
+                registerBloc.requestRegister(context,
+                    fecha_nacimiento: yearNacimientoController.text +
+                        "-" +
+                        mesEnLetras! +
+                        "-" +
+                        diaNacimientoController.text,
+                    type_document: dropdownDni,
+                    document: documentoController.text,
+                    first_name: primerNombreController.text,
+                    second_name: segundoNombreController.text,
+                    surnames: apellidoController.text,
+                    gender: dropdownSexo,
+                    age: edadController.text,
+                    email: emailController.text,
+                    phone: celularController.text,
+                    address: direccionController.text,
+                    type_sure: dropdownSeguro,
+                    password: passController.text,
+                    terms: valueTerminosYCondiciones ? "1" : '0')
+              }
           },
           child: Container(
             margin: const EdgeInsets.only(left: 70, right: 70, bottom: 0),
