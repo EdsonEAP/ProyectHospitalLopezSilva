@@ -213,24 +213,42 @@ class _CitaPresencialViewState extends State<CitaPresencialView> with Alerts {
                                             ),
                                           ],
                                         ),
-                                        Center(
-                                          child: WidgetsRepetidos().cajaSelect(
-                                              context,
-                                              "Lugar",
-                                              size.height * 0.08,
-                                              size.width * 1,
-                                              listLugar,
-                                              "",
-                                              dropdownLugar, (v) {
-                                            setState(() {
-                                              // listDoctores.clear();
-                                              // medico = null;
-                                              // listHorarios.clear();
-                                              // horario = null;
-                                              dropdownLugar = v;
-                                            });
-                                          }),
+                                        Row(
+                                          children: [
+                                            Container(
+                                              alignment: Alignment.centerLeft,
+                                              height: size.height * 0.08,
+                                              width: size.width * 0.23,
+                                              child: Text(
+                                                "Lugar:",
+                                                style: TextStyle(
+                                                    color: Color.fromARGB(
+                                                        255, 0, 0, 0),
+                                                    fontSize: 11),
+                                              ),
+                                            ),
+                                            Center(
+                                              child: WidgetsRepetidos()
+                                                  .cajaSelect(
+                                                      context,
+                                                      "Lugar",
+                                                      size.height * 0.089,
+                                                      size.width * 0.66,
+                                                      listLugar,
+                                                      "",
+                                                      dropdownLugar, (v) {
+                                                setState(() {
+                                                  // listDoctores.clear();
+                                                  // medico = null;
+                                                  // listHorarios.clear();
+                                                  // horario = null;
+                                                  dropdownLugar = v;
+                                                });
+                                              }),
+                                            ),
+                                          ],
                                         ),
+
                                         // Row(
                                         //   children: [
                                         //     Container(
@@ -318,7 +336,7 @@ class _CitaPresencialViewState extends State<CitaPresencialView> with Alerts {
                                                           EdgeInsets.symmetric(
                                                               vertical: 200),
                                                       child: Text(
-                                                        "Recargue la pagina",
+                                                        "No hay Registros",
                                                         style: TextStyle(
                                                             color:
                                                                 Color.fromARGB(
@@ -425,65 +443,65 @@ class _CitaPresencialViewState extends State<CitaPresencialView> with Alerts {
                                                 } else {
                                                   return Row(
                                                     children: [
-                                                      Container(
-                                                        alignment: Alignment
-                                                            .centerLeft,
-                                                        height:
-                                                            size.height * 0.08,
-                                                        width:
-                                                            size.width * 0.23,
-                                                        child: Text(
-                                                          "Horario:",
-                                                          style: TextStyle(
-                                                              color: Color
-                                                                  .fromARGB(255,
-                                                                      0, 0, 0),
-                                                              fontSize: 11),
-                                                        ),
-                                                      ),
-                                                      Expanded(
-                                                        child: WidgetsRepetidos()
-                                                            .cajaSelect(
-                                                                context,
-                                                                "Seleccione",
-                                                                size.height *
-                                                                    0.089,
-                                                                size.width *
-                                                                    0.5,
-                                                                listHorarios,
-                                                                "",
-                                                                horario, (v) {
-                                                          setState(() {
-                                                            if (dropdownEspecialidad ==
-                                                                    null ||
-                                                                dropdownEspecialidad ==
-                                                                    "") {
-                                                              showErrorDialog(
-                                                                  context:
-                                                                      context,
-                                                                  textContent:
-                                                                      "Debe de seleccionar una  Especialidad");
-                                                            }
-                                                            if (dropdownLugar ==
-                                                                    null ||
-                                                                dropdownLugar ==
-                                                                    "") {
-                                                              showErrorDialog(
-                                                                  context:
-                                                                      context,
-                                                                  textContent:
-                                                                      "Debe de seleccionar un centro de salud");
+                                                      // Container(
+                                                      //   alignment: Alignment
+                                                      //       .centerLeft,
+                                                      //   height:
+                                                      //       size.height * 0.08,
+                                                      //   width:
+                                                      //       size.width * 0.23,
+                                                      //   child: Text(
+                                                      //     "Horario:",
+                                                      //     style: TextStyle(
+                                                      //         color: Color
+                                                      //             .fromARGB(255,
+                                                      //                 0, 0, 0),
+                                                      //         fontSize: 11),
+                                                      //   ),
+                                                      // ),
+                                                      // Expanded(
+                                                      //   child: WidgetsRepetidos()
+                                                      //       .cajaSelect(
+                                                      //           context,
+                                                      //           "Seleccione",
+                                                      //           size.height *
+                                                      //               0.089,
+                                                      //           size.width *
+                                                      //               0.5,
+                                                      //           listHorarios,
+                                                      //           "",
+                                                      //           horario, (v) {
+                                                      //     setState(() {
+                                                      //       if (dropdownEspecialidad ==
+                                                      //               null ||
+                                                      //           dropdownEspecialidad ==
+                                                      //               "") {
+                                                      //         showErrorDialog(
+                                                      //             context:
+                                                      //                 context,
+                                                      //             textContent:
+                                                      //                 "Debe de seleccionar una  Especialidad");
+                                                      //       }
+                                                      //       if (dropdownLugar ==
+                                                      //               null ||
+                                                      //           dropdownLugar ==
+                                                      //               "") {
+                                                      //         showErrorDialog(
+                                                      //             context:
+                                                      //                 context,
+                                                      //             textContent:
+                                                      //                 "Debe de seleccionar un centro de salud");
 
-                                                              return;
-                                                            }
+                                                      //         return;
+                                                      //       }
 
-                                                            print(
-                                                                dropdownEspecialidad);
-                                                            horario = v;
-                                                            buscarHorarioMedico();
-                                                          });
-                                                        }),
-                                                      ),
+                                                      //       print(
+                                                      //           dropdownEspecialidad);
+                                                      //       horario = v;
+                                                      //       buscarHorarioMedico();
+                                                      //     });
+                                                      //   }),
+                                                      // ),
                                                     ],
                                                   );
                                                 }
@@ -566,9 +584,9 @@ streamBotonReactive(context) {
               document: prefs.documentoDni,
               email: correoController.text,
               especiality: dropdownEspecialidad,
-              horario: horario,
+              //horario: horario,
               lugar: dropdownLugar,
-              medico: medico,
+              medico: "1",
               medico_nombre: medico,
               nombre: prefs.nombreUsuario,
             ),

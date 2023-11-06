@@ -45,13 +45,13 @@ class CitaPresencialBloc with Alerts {
 
       buscarCitaHistorialC.sink.add("error");
 
-      return;
+      return [""];
     }
 
-    if (response["data"].isEmpty) {
+    if (response["message"] == "No se encontró resultados") {
       buscarCitaHistorialC.sink.add("error");
 
-      return;
+      return [""];
     }
 
     if (response["status"] == true && response["data"].isNotEmpty) {
@@ -67,23 +67,9 @@ class CitaPresencialBloc with Alerts {
         }
       }
       buscarCitaHistorialC.sink.add("correcto");
-
+      // print("servicioooooooooooooo medicoooooooo");
+      // print(nombresList);
       return nombresList;
-
-      // print("eddddddddddy");
-      // print(response["data"][0]["horarios"]);
-      // List<String> formattedHorarios = [];
-
-      // response["data"][0]["horarios"].forEach((dia, horas) {
-      //   horas.forEach((hora) {
-      //     formattedHorarios.add('$dia: $hora');
-      //   });
-      // });
-
-      // print(formattedHorarios);
-
-      // buscarCitaHistorialC.sink.add('correcto');
-      // return formattedHorarios;
     }
   }
 
@@ -135,7 +121,7 @@ class CitaPresencialBloc with Alerts {
       String? date,
       String? especiality,
       String? email,
-      String? horario,
+      //String? horario,
       String? lugar}) async {
     dynamic response = await buscaMedicoService.registrarCita(
         document: document ?? "",
@@ -145,7 +131,7 @@ class CitaPresencialBloc with Alerts {
         date: date ?? "",
         especiality: especiality ?? "",
         email: email ?? "",
-        horario: horario ?? "",
+        //horario: horario ?? "",
         lugar: lugar ?? "");
 
     if (response == null || response["status"] == false) {
@@ -155,12 +141,7 @@ class CitaPresencialBloc with Alerts {
       return;
     }
 
-    if (response["data"].isEmpty) {
-      showErrorDialog(context: context, textContent: "Error");
-      return;
-    }
-
-    if (response["status"] == true && response["data"].isNotEmpty) {
+    if (response["status"] == true) {
       print("enviandoooooooooooooooo");
       showErrorDialog(
           context: context, textContent: response["message"] ?? "Error");

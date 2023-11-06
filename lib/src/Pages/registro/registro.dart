@@ -288,11 +288,11 @@ class _RegistroViewState extends State<RegistroView> {
                     seleccione: "Contraseña",
                     oculto: true,
                     controlador: passController),
-                WidgetsRepetidos().inputLogin(
-                    active: true,
-                    seleccione: "Repetir contraseña",
-                    oculto: true,
-                    controlador: repeatpassController),
+                // WidgetsRepetidos().inputLogin(
+                //     active: true,
+                //     seleccione: "Repetir contraseña",
+                //     oculto: true,
+                //     controlador: repeatpassController),
                 SizedBox(height: size.height * 0.01),
                 Container(
                   child: Center(

@@ -27,7 +27,7 @@ class CitaPresencialService {
       required String date,
       required String especiality,
       required String email,
-      required String horario,
+      // required String horario,
       required String lugar}) async {
     Map<String, dynamic> body = {
       "document": document,
@@ -37,7 +37,7 @@ class CitaPresencialService {
       "date": date,
       "especiality": especiality,
       "email": email,
-      "horario": horario,
+      //"horario": horario,
       "lugar": lugar
     };
     print("Send data Service-->loginS--> body$body");

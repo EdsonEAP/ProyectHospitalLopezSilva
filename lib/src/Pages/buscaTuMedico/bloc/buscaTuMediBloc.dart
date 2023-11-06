@@ -41,8 +41,9 @@ class BuscaMedicoBloc with Alerts {
       return;
     }
 
-    if (response["data"].isEmpty) {
-      // showErrorDialog(context: context, textContent: "No se encontraron citas");
+    if (response["message"] == "No se encontró resultados") {
+      showErrorDialog(
+          context: context, textContent: "No se encontraron resultados");
       buscarCitaHistorialC.sink.add([]);
       return;
     }
