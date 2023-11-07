@@ -59,5 +59,5 @@ class LoginM {
     return data;
   }
 
-  LoginM._internal(); // Constructor privado para garantizar la unicidad del Singleton
+  LoginM._internal();
 }

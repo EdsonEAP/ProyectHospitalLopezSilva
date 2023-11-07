@@ -19,7 +19,7 @@ TextEditingController correoController = TextEditingController();
 
 int animated = 1;
 
-DateTime selectedDate = DateTime.now(); // Define la fecha inicial
+DateTime selectedDate = DateTime.now();
 final prefs = PreferenciasUsuario();
 CitaPresencialBloc citaPresencialBloc = CitaPresencialBloc();
 List<String> listLugar = [];

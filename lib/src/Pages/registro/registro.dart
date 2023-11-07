@@ -76,8 +76,7 @@ class _RegistroViewState extends State<RegistroView> {
           Opacity(
             opacity: 0.3,
             child: Image(
-              image: AssetImage(
-                  'assets/icon/doctor.jpg'), // Reemplaza con la URL de tu imagen
+              image: AssetImage('assets/icon/doctor.jpg'),
               width: size.width,
               height: size.height,
               fit: BoxFit.cover,
@@ -87,7 +86,6 @@ class _RegistroViewState extends State<RegistroView> {
             height: size.height * 1,
             width: size.width * 1,
             child: ListView(
-              // Utiliza un ListView para hacer que el contenido sea desplazable
               children: [
                 SizedBox(
                   height: size.height * 0.03,
@@ -96,9 +94,8 @@ class _RegistroViewState extends State<RegistroView> {
                   height: size.height * 0.15,
                   width: size.width * 0.25,
                   child: Image.asset(
-                    'assets/icon/logofarmacia.png', // Ajusta la ruta de tu imagen
-                    fit: BoxFit
-                        .contain, // Ajusta el ajuste según tus necesidades
+                    'assets/icon/logofarmacia.png',
+                    fit: BoxFit.contain,
                   ),
                 ),
                 SizedBox(height: size.height * 0.03),
@@ -257,8 +254,7 @@ class _RegistroViewState extends State<RegistroView> {
                     Container(
                       margin: const EdgeInsets.symmetric(horizontal: 15),
                       child: Align(
-                        alignment: Alignment
-                            .centerLeft, // Alinea el texto a la izquierda
+                        alignment: Alignment.centerLeft,
                         child: Text(
                           "Seguro / Plan de salud",
                           overflow: TextOverflow.ellipsis,
@@ -371,15 +367,12 @@ class _RegistroViewState extends State<RegistroView> {
                             style: TextStyle(
                               color: General.colorApp,
                               fontSize: 12,
-                              decoration:
-                                  TextDecoration.underline, // Subraya el texto
+                              decoration: TextDecoration.underline,
                             ),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
                                 Navigator.pushReplacementNamed(
                                     context, LoginView.name);
-                                // Aquí puedes navegar a la página de registro
-                                // Usando Navigator o la forma que prefieras
                               },
                           ),
                         ],
@@ -430,8 +423,7 @@ streamBotonReactive(context) {
                         TextButton(
                           child: Text("Aceptar"),
                           onPressed: () {
-                            Navigator.of(context)
-                                .pop(); // Cierra el cuadro de diálogo
+                            Navigator.of(context).pop();
                           },
                         ),
                       ],
@@ -475,9 +467,8 @@ streamBotonReactive(context) {
                     child: Text(
                       snapshot.data ?? '',
                       style: TextStyle(
-                        color: Colors.white, // Cambia el color a blanco
-                        fontSize:
-                            12, // Cambia el tamaño del texto según tus necesidades
+                        color: Colors.white,
+                        fontSize: 12,
                       ),
                     ),
                   )

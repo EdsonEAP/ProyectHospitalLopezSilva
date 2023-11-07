@@ -39,12 +39,9 @@ class _HomeViewState extends State<HomeView> {
               ),
             ),
           ),
-          // Agregar un ícono de menú al AppBar
-
           leading: IconButton(
             icon: Icon(Icons.menu),
             onPressed: () {
-              // Abre el Drawer al hacer clic en el ícono de menú
               _scaffoldKey.currentState!.openDrawer();
             },
           ),
@@ -55,10 +52,9 @@ class _HomeViewState extends State<HomeView> {
           child: DrawerGeneral().drawerGeneral(size, context),
         ),
         body: Container(
-          height: size.height,
-          width: size.width,
-          color: Colors.white,
-          child: Container()
-        ));
+            height: size.height,
+            width: size.width,
+            color: Colors.white,
+            child: Container()));
   }
 }

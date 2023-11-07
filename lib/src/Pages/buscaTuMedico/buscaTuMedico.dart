@@ -79,12 +79,9 @@ class _BuscaTuMedicoViewState extends State<BuscaTuMedicoView> {
               ),
             ),
           ),
-          // Agregar un ícono de menú al AppBar
-
           leading: IconButton(
             icon: Icon(Icons.menu),
             onPressed: () {
-              // Abre el Drawer al hacer clic en el ícono de menú
               _scaffoldKey.currentState!.openDrawer();
             },
           ),
@@ -373,9 +370,8 @@ class _BuscaTuMedicoViewState extends State<BuscaTuMedicoView> {
                     'Consultar horario',
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
-                      color: Colors.white, // Cambia el color a blanco
-                      fontSize:
-                          12, // Cambia el tamaño del texto según tus necesidades
+                      color: Colors.white,
+                      fontSize: 12,
                     ),
                   ),
                 )),

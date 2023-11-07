@@ -15,7 +15,7 @@ class DrawerGeneral {
     return ListView(
       children: [
         Container(
-          height: 100, // Ajusta la altura del DrawerHeader aquí
+          height: 100,
           child: DrawerHeader(
               decoration: BoxDecoration(
                 color: Color.fromRGBO(255, 255, 255, 1),
@@ -43,118 +43,111 @@ class DrawerGeneral {
         ),
         ListTile(
           leading: Icon(
-            Icons.home, // Icono de una casa
-            color: Colors.white, // Color del icono
+            Icons.home,
+            color: Colors.white,
           ),
           title: Text(
             'INICIO',
             style: TextStyle(
-              color: Colors.white, // Color del texto
-              fontWeight: FontWeight.bold, // Texto en negrita
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
             ),
           ),
           onTap: () {
             Navigator.pushReplacementNamed(context, HomeView.name);
-
-            // Aquí puedes agregar acciones para la opción 1
           },
         ),
         ListTile(
           leading: Icon(
-            Icons.date_range, // Icono de una casa
-            color: Colors.white, // Color del icono
+            Icons.date_range,
+            color: Colors.white,
           ),
           title: Text(
             'CITA PRESENCIAL',
             style: TextStyle(
-              color: Colors.white, // Color del texto
-              fontWeight: FontWeight.bold, // Texto en negrita
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
             ),
           ),
           onTap: () {
             Navigator.pushReplacementNamed(context, CitaPresencialView.name);
-            // Aquí puedes agregar acciones para la opción 1
           },
         ),
         ListTile(
           leading: Icon(
-            Icons.search, // Icono de una casa
-            color: Colors.white, // Color del icono
+            Icons.search,
+            color: Colors.white,
           ),
           title: Text(
             'BUSCA TU MÉDICO',
             style: TextStyle(
-              color: Colors.white, // Color del texto
-              fontWeight: FontWeight.bold, // Texto en negrita
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
             ),
           ),
           onTap: () {
             Navigator.pushReplacementNamed(context, BuscaTuMedicoView.name);
-            // Aquí puedes agregar acciones para la opción 1
           },
         ),
         ListTile(
           leading: Icon(
-            Icons.event, // Icono de una casa
-            color: Colors.white, // Color del icono
+            Icons.event,
+            color: Colors.white,
           ),
           title: Text(
             'MIS CITAS',
             style: TextStyle(
-              color: Colors.white, // Color del texto
-              fontWeight: FontWeight.bold, // Texto en negrita
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
             ),
           ),
           onTap: () {
             Navigator.pushReplacementNamed(context, MisCitasView.name);
-            // Aquí puedes agregar acciones para la opción 1
           },
         ),
         ListTile(
           leading: Icon(
-            Icons.location_on, // Icono de una casa
-            color: Colors.white, // Color del icono
+            Icons.location_on,
+            color: Colors.white,
           ),
           title: Text(
             'UBICANOS',
             style: TextStyle(
-              color: Colors.white, // Color del texto
-              fontWeight: FontWeight.bold, // Texto en negrita
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
             ),
           ),
           onTap: () {
             Navigator.pushReplacementNamed(context, UbicanosView.name);
-            // Aquí puedes agregar acciones para la opción 1
           },
         ),
         ListTile(
           leading: Icon(
-            Icons.description, // Icono de una casa
-            color: Colors.white, // Color del icono
+            Icons.description,
+            color: Colors.white,
           ),
           title: Text(
             'TÉRMINOS Y CONDICIONES',
             style: TextStyle(
-              color: Colors.white, // Color del texto
-              fontWeight: FontWeight.bold, // Texto en negrita
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
             ),
           ),
           onTap: () {
             Navigator.pushReplacementNamed(
                 context, TerminosYCondicionesView.name);
-            // Aquí puedes agregar acciones para la opción 1
           },
         ),
         ListTile(
           leading: Icon(
-            Icons.exit_to_app, // Icono de una casa
-            color: Colors.white, // Color del icono
+            Icons.exit_to_app,
+            color: Colors.white,
           ),
           title: Text(
             'CERRAR SESIÓN',
             style: TextStyle(
-              color: Colors.white, // Color del texto
-              fontWeight: FontWeight.bold, // Texto en negrita
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
             ),
           ),
           onTap: () {
@@ -164,7 +157,6 @@ class DrawerGeneral {
             prefs.documentoDni = "";
             prefs.correo = "";
             Navigator.pushReplacementNamed(context, LoginView.name);
-            // Aquí puedes agregar acciones para la opción 1
           },
         ),
       ],

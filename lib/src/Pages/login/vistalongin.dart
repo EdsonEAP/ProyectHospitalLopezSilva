@@ -132,8 +132,6 @@ class _LoginViewState extends State<LoginView> {
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
                                 Navigator.pushNamed(context, RegistroView.name);
-                                // Aquí puedes navegar a la página de registro
-                                // Usando Navigator o la forma que prefieras
                               },
                           ),
                         ],

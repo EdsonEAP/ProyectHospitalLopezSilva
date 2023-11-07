@@ -56,12 +56,9 @@ class _MisCitasViewState extends State<MisCitasView> {
               ),
             ),
           ),
-          // Agregar un ícono de menú al AppBar
-
           leading: IconButton(
             icon: Icon(Icons.menu),
             onPressed: () {
-              // Abre el Drawer al hacer clic en el ícono de menú
               _scaffoldKey.currentState!.openDrawer();
             },
           ),
@@ -218,24 +215,19 @@ class _MisCitasViewState extends State<MisCitasView> {
             ),
             child: Row(
               children: <Widget>[
-                // Espacio entre el círculo y el texto
                 Text(
                   texto ?? "",
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
-                    color: (texto == "PENDIENTE")
-                        ? Colors.green
-                        : Colors.red, // Color del texto
+                    color: (texto == "PENDIENTE") ? Colors.green : Colors.red,
                   ),
                 ),
                 SizedBox(width: 8),
                 Container(
-                  width: 12, // Ancho del círculo
-                  height: 12, // Altura del círculo
+                  width: 12,
+                  height: 12,
                   decoration: BoxDecoration(
-                    color: (texto == "PENDIENTE")
-                        ? Colors.green
-                        : Colors.red, // Color del círculo
+                    color: (texto == "PENDIENTE") ? Colors.green : Colors.red,
                     shape: BoxShape.circle,
                   ),
                 ),
@@ -372,9 +364,8 @@ class _MisCitasViewState extends State<MisCitasView> {
                       child: Text(
                         snapshot.data ?? '',
                         style: TextStyle(
-                          color: Colors.white, // Cambia el color a blanco
-                          fontSize:
-                              12, // Cambia el tamaño del texto según tus necesidades
+                          color: Colors.white,
+                          fontSize: 12,
                         ),
                       ),
                     )

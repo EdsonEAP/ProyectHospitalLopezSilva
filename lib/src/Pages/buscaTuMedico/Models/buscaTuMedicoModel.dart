@@ -7,18 +7,19 @@ class BuscarMedicoM {
   String? titulo;
   Null? premios;
   String? sociedad;
-  Horarios? horarios;
+  //Horarios? horarios;
 
-  BuscarMedicoM(
-      {this.nombres,
-      this.imagen,
-      this.cargo,
-      this.especialidad,
-      this.centroAtencion,
-      this.titulo,
-      this.premios,
-      this.sociedad,
-      this.horarios});
+  BuscarMedicoM({
+    this.nombres,
+    this.imagen,
+    this.cargo,
+    this.especialidad,
+    this.centroAtencion,
+    this.titulo,
+    this.premios,
+    this.sociedad,
+    // this.horarios
+  });
 
   BuscarMedicoM.fromJson(Map<String, dynamic> json) {
     nombres = json['nombres'];
@@ -29,9 +30,9 @@ class BuscarMedicoM {
     titulo = json['titulo'];
     premios = json['premios'];
     sociedad = json['sociedad'];
-    horarios = json['horarios'] != null
-        ? new Horarios.fromJson(json['horarios'])
-        : null;
+    // horarios = json['horarios'] != null
+    //     ? new Horarios.fromJson(json['horarios'])
+    //     : null;
   }
 
   Map<String, dynamic> toJson() {
@@ -44,28 +45,28 @@ class BuscarMedicoM {
     data['titulo'] = this.titulo;
     data['premios'] = this.premios;
     data['sociedad'] = this.sociedad;
-    if (this.horarios != null) {
-      data['horarios'] = this.horarios!.toJson();
-    }
+    // if (this.horarios != null) {
+    //   data['horarios'] = this.horarios!.toJson();
+    // }
     return data;
   }
 }
 
-class Horarios {
-  List<int>? lunes30;
-  List<int>? martes31;
+// class Horarios {
+//   List<int>? lunes30;
+//   List<int>? martes31;
 
-  Horarios({this.lunes30, this.martes31});
+//   Horarios({this.lunes30, this.martes31});
 
-  Horarios.fromJson(Map<String, dynamic> json) {
-    lunes30 = json['Lunes 30'].cast<int>();
-    martes31 = json['Martes 31'].cast<int>();
-  }
+//   Horarios.fromJson(Map<String, dynamic> json) {
+//     lunes30 = json['Lunes 30'].cast<int>();
+//     martes31 = json['Martes 31'].cast<int>();
+//   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['Lunes 30'] = this.lunes30;
-    data['Martes 31'] = this.martes31;
-    return data;
-  }
-}
+//   Map<String, dynamic> toJson() {
+//     final Map<String, dynamic> data = new Map<String, dynamic>();
+//     data['Lunes 30'] = this.lunes30;
+//     data['Martes 31'] = this.martes31;
+//     return data;
+//   }
+// }

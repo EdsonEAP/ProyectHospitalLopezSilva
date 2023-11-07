@@ -73,7 +73,7 @@ class _DateTimePickerWidgetState extends State<DateTimePickerWidget> {
           decoration: BoxDecoration(
             border: Border.all(
               color: General.colorApp,
-              width: 0, // Ancho del borde
+              width: 0, 
             ),
             color: Color(0xffF2F2F2).withOpacity(0.7),
             borderRadius: BorderRadius.circular(5),

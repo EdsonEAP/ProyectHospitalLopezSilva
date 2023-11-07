@@ -65,12 +65,9 @@ class _InfoMedicoViewState extends State<InfoMedicoView> {
               ),
             ),
           ),
-          // Agregar un ícono de menú al AppBar
-
           leading: IconButton(
             icon: Icon(Icons.menu),
             onPressed: () {
-              // Abre el Drawer al hacer clic en el ícono de menú
               _scaffoldKey.currentState!.openDrawer();
             },
           ),
@@ -133,9 +130,9 @@ class _InfoMedicoViewState extends State<InfoMedicoView> {
                                       itemBuilder: (context, i) {
                                         return Column(children: [
                                           tarjetConsultarHorario(
-                                              size,
-                                              snapshot.data![i],
-                                              prefs.busquedaEspecialidadDoctor),
+                                            size,
+                                            snapshot.data![i],
+                                          ),
                                         ]);
                                       })
                                 ],
@@ -157,10 +154,9 @@ class _InfoMedicoViewState extends State<InfoMedicoView> {
   }
 }
 
-Container tarjetConsultarHorario(
+Widget tarjetConsultarHorario(
   Size size,
-  String? medico,
-  String? especialidad,
+  String? horario,
 ) {
   return Container(
     margin: EdgeInsets.all(10),
@@ -190,7 +186,7 @@ Container tarjetConsultarHorario(
             ),
           ),
           child: Text(
-            "Horarios de Atención",
+            "Horario de Atención",
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
@@ -205,47 +201,13 @@ Container tarjetConsultarHorario(
               Row(
                 children: [
                   Text(
-                    "Médico: ",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    prefs.busquedaNombreDoctor,
-                    style: TextStyle(
-                      color: General.colorApp,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: size.height * 0.01),
-              Row(
-                children: [
-                  Text(
-                    "Especialidad: ",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    especialidad ?? "",
-                    style: TextStyle(
-                      color: General.colorApp,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: size.height * 0.01),
-              Row(
-                children: [
-                  Text(
                     "Horario: ",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
-                    medico ?? "",
+                    horario ?? "",
                     style: TextStyle(
                       color: General.colorApp,
                     ),
