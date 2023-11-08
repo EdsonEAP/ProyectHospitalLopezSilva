@@ -37,7 +37,8 @@ class _MisCitasViewState extends State<MisCitasView> {
 
   void inicio() async {
     citaController.text = prefs.nombreUsuario;
-    await historialCitaBloc.requestHistorialCita(context, dni: "75013406");
+    await historialCitaBloc.requestHistorialCita(context,
+        dni: prefs.documentoDni);
   }
 
   @override
