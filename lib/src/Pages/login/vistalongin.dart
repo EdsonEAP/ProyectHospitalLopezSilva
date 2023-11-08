@@ -26,11 +26,11 @@ bool isChecked = false;
 class _LoginViewState extends State<LoginView> {
   @override
   void initState() {
-    if (prefs.guardadoUserAndPassword == true) {
-      userController.text = prefs.user;
-      passController.text = prefs.password;
-      isChecked = prefs.guardadoUserAndPassword;
-    }
+    // if (prefs.guardadoUserAndPassword == true) {
+    //   userController.text = prefs.user;
+    //   passController.text = prefs.password;
+    //   isChecked = prefs.guardadoUserAndPassword;
+    // }
     //prefs.ultimaPagina = LoginView.name;
     super.initState();
   }
@@ -82,28 +82,28 @@ class _LoginViewState extends State<LoginView> {
                     oculto: true,
                     controlador: passController),
                 SizedBox(height: size.height * 0.01),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Flexible(
-                        child: Text(
-                      "Recordarme",
-                      style: TextStyle(
-                          color: General.grissApp,
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold),
-                    )),
-                    Checkbox(
-                        activeColor: General.colorApp,
-                        value: isChecked,
-                        onChanged: (value) {
-                          setState(() {
-                            isChecked = value!;
-                            print(isChecked);
-                          });
-                        }),
-                  ],
-                ),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   children: [
+                //     Flexible(
+                //         child: Text(
+                //       "Recordarme",
+                //       style: TextStyle(
+                //           color: General.grissApp,
+                //           fontSize: 12,
+                //           fontWeight: FontWeight.bold),
+                //     )),
+                //     Checkbox(
+                //         activeColor: General.colorApp,
+                //         value: isChecked,
+                //         onChanged: (value) {
+                //           setState(() {
+                //             isChecked = value!;
+                //             print(isChecked);
+                //           });
+                //         }),
+                //   ],
+                // ),
                 SizedBox(height: size.height * 0.01),
                 Container(
                   margin: const EdgeInsets.only(left: 70, right: 70, bottom: 0),
