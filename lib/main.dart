@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       color: Colors.red,
       debugShowCheckedModeBanner: false,
-      title: 'Recursos Humanos',
+      title: 'App Lopez Silva',
       initialRoute: LoginView.name,
       routes: Routes.rutas,
     );

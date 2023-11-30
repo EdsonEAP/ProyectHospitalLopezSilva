@@ -12,7 +12,7 @@ class CitaPresencialService {
     };
     print("Send data Service-->loginS--> body$body");
     var response = await Internet.httpPostcook(
-        url: "http://10.0.2.2:8000/api/doctors/search", body: body);
+        url: "http://167.172.17.215/api/doctors/search", body: body);
     print("Result....$response");
     //LoginM.fromJson(response);
 
@@ -42,7 +42,7 @@ class CitaPresencialService {
     };
     print("Send data Service-->loginS--> body$body");
     var response = await Internet.httpPostcook(
-        url: "http://10.0.2.2:8000/cita", body: body);
+        url: "http://167.172.17.215/cita", body: body);
     print("Result....$response");
     //LoginM.fromJson(response);
 

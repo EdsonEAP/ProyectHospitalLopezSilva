@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_application_1/src/Mixins/alerts.dart';
 import 'package:flutter_application_1/src/Pages/Services/generalServices.dart';
 import 'package:flutter_application_1/src/Pages/buscaTuMedico/Models/buscaTuMedicoModel.dart';
@@ -32,6 +33,7 @@ class CitaPresencialBloc with Alerts {
   factory CitaPresencialBloc() {
     return _instance;
   }
+
   requestBuscaMedico(context,
       {String? medico, String? especialidad, String? centro_atencion}) async {
     dynamic response = await buscaMedicoService.buscaMedicoS(
@@ -123,6 +125,7 @@ class CitaPresencialBloc with Alerts {
       String? email,
       //String? horario,
       String? lugar}) async {
+    showLoadingDialog(context: context, text: "Registrando cita...");
     dynamic response = await buscaMedicoService.registrarCita(
         document: document ?? "",
         nombre: nombre ?? "",
@@ -133,7 +136,7 @@ class CitaPresencialBloc with Alerts {
         email: email ?? "",
         //horario: horario ?? "",
         lugar: lugar ?? "");
-
+    Navigator.pop(context);
     if (response == null || response["status"] == false) {
       showErrorDialog(
           context: context, textContent: response["message"] ?? "Error");

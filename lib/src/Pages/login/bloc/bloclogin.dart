@@ -13,15 +13,19 @@ import 'package:flutter_application_1/src/Preferences/preferences.dart';
 class LoginBloc with Alerts {
   LoginM modelLogin = LoginM();
   LoginService loginService = LoginService();
+
   StreamController<String> botonLoginC = StreamController<String>.broadcast();
   Stream<String> get botonLoginS => botonLoginC.stream;
+
   final prefs = PreferenciasUsuario();
 
   static final LoginBloc _instance = LoginBloc._internal();
   factory LoginBloc() {
     return _instance;
   }
+
   final String hola = "hola";
+
   requestLogin(context, {String? user, String? pass}) async {
     botonLoginC.sink.add("ERROR");
     dynamic response =
@@ -32,6 +36,7 @@ class LoginBloc with Alerts {
           context: context, textContent: response["message"] ?? "Error");
       return;
     }
+
     if (response["status"] == true) {
       var data = response["data"];
       print("pruebaaaaaaaaaaaaaaaaaaaaaaaaa");
@@ -55,12 +60,9 @@ class LoginBloc with Alerts {
           (temps.firstName ?? "") + " " + (temps.surnames ?? "");
       prefs.documentoDni = temps.document ?? "";
       prefs.correo = temps.email ?? "";
+
       botonLoginC.sink.add("INGRESAR");
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => HomeView(),
-          ));
+      Navigator.pushReplacementNamed(context, HomeView.name);
     }
   }
 

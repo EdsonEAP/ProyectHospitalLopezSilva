@@ -35,7 +35,7 @@ class RegisterService {
     };
     print("Send data Service-->loginS--> body$body");
     var response = await Internet.httpPostcook(
-        url: "http://10.0.2.2:8000/user", body: body);
+        url: "http://167.172.17.215/user", body: body);
     print("Request....");
     print("Result....$response");
 

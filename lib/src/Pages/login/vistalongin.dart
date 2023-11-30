@@ -169,10 +169,7 @@ streamBotonReactive(context) {
         duration: const Duration(seconds: 2),
         child: InkWell(
           onTap: () => {
-            prefs.emailSave = userController.text,
-            prefs.user = userController.text,
-            prefs.password = passController.text,
-            prefs.guardadoUserAndPassword = isChecked,
+            //prefs.guardadoUserAndPassword = isChecked,
             loginBloc.requestLogin(context,
                 user: userController.text, pass: passController.text),
           },

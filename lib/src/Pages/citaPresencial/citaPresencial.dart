@@ -248,38 +248,6 @@ class _CitaPresencialViewState extends State<CitaPresencialView> with Alerts {
                                             ),
                                           ],
                                         ),
-
-                                        // Row(
-                                        //   children: [
-                                        //     Container(
-                                        //       alignment: Alignment.centerLeft,
-                                        //       height: size.height * 0.08,
-                                        //       width: size.width * 0.23,
-                                        //       child: Text(
-                                        //         "Lugar:",
-                                        //         style: TextStyle(
-                                        //             color: Color.fromARGB(
-                                        //                 255, 0, 0, 0),
-                                        //             fontSize: 11),
-                                        //       ),
-                                        //     ),
-                                        //     Expanded(
-                                        //       child: WidgetsRepetidos()
-                                        //           .cajaSelect(
-                                        //               context,
-                                        //               "Seleccione",
-                                        //               size.height * 0.089,
-                                        //               size.width * 0.5,
-                                        //               listLugar,
-                                        //               "",
-                                        //               dropdownLugar, (v) {
-                                        //         setState(() {
-                                        //           dropdownLugar = v;
-                                        //         });
-                                        //       }),
-                                        //     ),
-                                        //   ],
-                                        // ),
                                         Row(
                                           children: [
                                             Container(

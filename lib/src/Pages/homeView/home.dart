@@ -69,7 +69,7 @@ class _HomeViewState extends State<HomeView> {
                   children: [
                     cardHome(
                       size,
-                      modelLogin.address ?? "CITA PRESENCIAL",
+                      "CITA PRESENCIAL",
                       Icons.date_range,
                       "assets/doctor/doctor1.jpg",
                       () {

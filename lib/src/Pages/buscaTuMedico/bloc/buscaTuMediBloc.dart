@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_application_1/src/Mixins/alerts.dart';
 import 'package:flutter_application_1/src/Pages/Services/generalServices.dart';
 import 'package:flutter_application_1/src/Pages/buscaTuMedico/Models/buscaTuMedicoModel.dart';
@@ -27,11 +28,13 @@ class BuscaMedicoBloc with Alerts {
 
   requestBuscaMedico(context,
       {String? nombres, String? especialidad, String? centro_atencion}) async {
+    showLoadingDialog(context: context, text: "Buscando Medico...");
+
     dynamic response = await buscaMedicoService.buscaMedicoS(
         nombres: nombres ?? "",
         especialidad: especialidad ?? "",
         centro_atencion: centro_atencion ?? "");
-
+    Navigator.pop(context);
     if (response == null || response["status"] == false) {
       showErrorDialog(
           context: context, textContent: response["message"] ?? "Error");
