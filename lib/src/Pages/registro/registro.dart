@@ -270,7 +270,7 @@ class _RegistroViewState extends State<RegistroView> {
                         "Seleccione",
                         size.height * 0.08,
                         size.width * 1,
-                        ["PROPIO", "b"],
+                        ["PROPIO", "SIS", "ESSALUD"],
                         "",
                         dropdownSeguro, (v) {
                       setState(() {
@@ -482,34 +482,4 @@ streamBotonReactive(context) {
       );
     },
   );
-}
-
-class _Curvas extends CustomPainter {
-  @override
-  void paint(
-    Canvas canvas,
-    Size size,
-  ) {
-    final paint = Paint();
-
-    paint.color = Colors.red;
-    paint.style = PaintingStyle.fill;
-    paint.strokeWidth = 20;
-
-    final path = Path();
-    //curva en la parte superior
-    //path.moveTo(0, 0); // punto de inicio en la esquina superior izquierda
-    path.lineTo(0, size.height * 0.40);
-    //path.quadraticBezierTo(x1,y1,x2,y2) x1,y1 es el punto donde pasa la curva, x2,y2 es la recta de donde iniciara la curvatura
-    path.quadraticBezierTo(
-        size.width * 0.5, size.height * 0.50, size.width, size.height * 0.40);
-    path.lineTo(size.width, 0);
-
-    canvas.drawPath(path, paint);
-  }
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) {
-    return true;
-  }
 }
